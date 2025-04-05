@@ -386,6 +386,13 @@ nav {
 }
 
 /* Pricing Section */
+.pricing{
+    background-color: var(--light-color);
+}
+
+
+
+
 .pricing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -775,16 +782,35 @@ textarea {
 }
 
 /* Contact Section */
+
+
+
+
 .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 25px;
+    box-sizing: border-box;
 }
 
 .contact-info {
     display: flex;
     flex-direction: column;
     gap: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 50px;
+    max-width: 100%; /* Remove any max-width constraint */
+    width: 100%; /* Allow it to take the full width of its container */
+    grid-column: 1 / span 2; /* This makes the box extend across both columns */
+    
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr; /* Stack the grid items on smaller screens */
+    }
 }
 
 .contact-item {
